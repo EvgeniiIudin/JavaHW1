@@ -3,56 +3,34 @@
  * Реализовать простой калькулятор
  */
 
- import java.util.Scanner;
-
- public class task3 {
-     static int scanNumber() {
-         Scanner scan = new Scanner(System.in);
-         int number = scan.nextInt();
-         return number;
- 
-     }
- 
-     static String scanOperations() {
-         Scanner scan = new Scanner(System.in);
-         String operations = scan.nextLine();
-         return operations;
- 
-     }
- 
-     static int getResult(String opr, int num1, int num2) {
-         int result = 0;
-         switch (opr) {
-             case "+":
-                 result = num1 + num2;
-                 break;
-             case "-":
-                 result = num1 - num2;
-                 break;
-             case "*":
-                 result = num1 * num2;
-                 break;
-             case "/":
-                 result = num1 / num2;
- 
-             default:
-                 System.out.println("Выберете действие: -, +, *, /");
-                 break;
-         }
-         return result;
- 
-     }
- 
-     public static void main(String[] args) {
-         System.out.println("Введите первое число: ");
-         int num1 = scanNumber();
-         System.out.println("Выберете действие: -, +, *, /");
-         String operations = scanOperations();
-         System.out.println("Введите второе число: ");
-         int num2 = scanNumber();
-         int result = getResult(operations, num1, num2);
-         System.out.printf("%d %s %d = %d", num1, operations, num2, result);
- 
-     }
- 
- }
+ import java.util.*;
+public class task3 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Введите первое число: ");		
+		Double num1 = scan.nextDouble ();
+        System.out.print("Введите второе число: ");		
+		Double num2 = scan.nextDouble ();
+        
+        Scanner scan1 = new Scanner(System.in);
+        System.out.print("Введите операцию: ");
+		String operation = scan1.nextLine();        
+       
+        switch (operation){
+            case "+":
+                System.out.println(num1 + " + " +num2 + " = " + (num1+num2));
+                break;
+            case "-":
+                System.out.println(num1 + " - " +num2 + " = " + (num1-num2));
+                break;
+            case "*":
+                System.out.println(num1 + " * " +num2 + " = " + (num1*num2));
+                break;
+            case "/":
+                System.out.println(num1 + " / " +num2 + " = " + (num1/num2));
+                break;
+            default:
+                System.out.println("нет такой операции :(");
+        }
+   }    
+}
